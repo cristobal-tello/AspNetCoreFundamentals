@@ -1,15 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using Microsoft.Extensions.Configuration;
 
 namespace OdeToFood
 {
     public class Greeter : IGreeter
     {
+        string greeting;
+
+        public Greeter(IConfiguration configuration)
+        {
+            greeting = configuration["Greeting"];
+        }
+
         public string GetGreetting()
         {
-            return "Hello from Greeter!!!";
+            return greeting;
         }
     }
 }

@@ -26,6 +26,7 @@ namespace OdeToFood
         {
             // Take a look 'services' param var has already objects
 
+            services.AddSingleton(Configuration);
             services.AddSingleton<IGreeter, Greeter>();
         }
 
